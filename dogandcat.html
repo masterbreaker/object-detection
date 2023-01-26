@@ -24,55 +24,33 @@
 
   </center>
   <a href="index.html" class="btn">Back</a>
-  <h1 id="objects-number">Objects : </h1>
   <script>
     img="";
 
-    img="";
-status="";
 
 function setup(){
     canvas=createCanvas(640,420);
     canvas.center();
-
-    objectDetector=ml5.objectDetector('cocossd',modelloaded);
-    document.getElementById("status").innerHTML="status:detecting objects"
-}
-
-
-function modelloaded(){
-console.log("modelloaded");
-status=true;
-objectDetector.detect(img,gotResult);
-
-
-}
-
-function gotResult(error,results){
-    if(error){
-        console.log(error)
-
-    }
-    else{
-        console.log(results)
-    }
-
 }
 
 function preload(){
-    img=loadImage("room.png")
+    img=loadImage("dog_cat.jpg")
 
 }
-
-function draw(){
+  function draw(){
     image(img,0,0,640,420);
     fill("#ff1100");
-    text("bed",70,242);
+    text("dog",35,55);
     noFill();
     stroke("#ff1100");
-    rect(65,225,365,160)  
-}
+    rect(30,40,325,400)
 
+    fill("#ff1100");
+    text("cat",310, 90);
+    noFill();
+    stroke("#ff1100");
+    rect(300,70,260,320)
+}
   </script>
 
 </body>
